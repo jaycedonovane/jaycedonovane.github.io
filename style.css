@@ -40,7 +40,8 @@ p {
 @media screen and (min-width: 768px) {
     #gallery img {
         width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
-        height: 350px; /* Fixe la hauteur à 350 pixels */
+        height: auto;
+        max-height: 350px; /* Fixe la hauteur maximale à 350 pixels pour maintenir le rapport d'aspect */
     }
 
     #gallery {
