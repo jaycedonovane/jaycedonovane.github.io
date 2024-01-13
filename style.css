@@ -36,6 +36,19 @@ p {
     margin: 10px;
     margin-top: 20px;
 }
+
+@media screen and (min-width: 768px) {
+    #gallery img {
+        width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
+        height: 350px; /* Fixe la hauteur à 350 pixels */
+    }
+
+    #gallery {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .horizontal-bar {
     height: 10px;
     width: 100%;
@@ -43,6 +56,7 @@ p {
     margin-top: 7px;
     margin-bottom: 5px;
 }
+
 .horizontal-bar2 {
     height: 10px;
     width: 100%;
