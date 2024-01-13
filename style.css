@@ -39,13 +39,20 @@ p {
 
 @media screen and (min-width: 768px) {
     #gallery img {
+        width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
+        height: auto;
         max-width: 480px; /* Taille maximale en largeur pour les écrans plus larges */
         max-height: 360px; /* Taille maximale en hauteur pour les écrans plus larges */
+        margin: 10px;
     }
 
     #gallery {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: -10px; /* Compensation pour la marge négative pour le premier élément de chaque ligne */
+        margin-right: -10px; /* Compensation pour la marge négative pour le dernier élément de chaque ligne */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
