@@ -37,9 +37,26 @@ p {
     margin: 10px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
     #gallery {
-        margin: 0; /* Supprimez les marges définies pour les smartphones */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0; /* Aucune marge pour les smartphones */
+    }
+
+    #gallery img {
+        max-width: 100%; /* Utilisez la largeur maximale de l'écran pour les smartphones */
+        max-height: 100%; /* Utilisez la hauteur maximale de l'écran pour les smartphones */
+        width: auto;
+        height: auto;
+        margin: 10px;
+    }
+
+    .horizontal-bar {
+        margin-top: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
+        margin-bottom: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
     }
 }
 
@@ -59,18 +76,9 @@ p {
     margin-bottom: 5px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
     #gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0; /* Aucune marge pour les smartphones */
-    }
-
-    .horizontal-bar {
-        margin-top: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
-        margin-bottom: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
+        margin: 0; /* Supprimez les marges définies pour les smartphones */
     }
 }
 
