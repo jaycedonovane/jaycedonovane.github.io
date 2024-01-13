@@ -24,35 +24,22 @@ p {
 #gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0 15%; /* Ajout de marges de 15% de chaque côté */
 }
 
 #gallery img {
-    max-width: 100%;
+    max-width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
     height: auto;
+    max-width: 480px; /* Taille maximale en largeur pour les écrans plus larges */
+    max-height: 360px; /* Taille maximale en hauteur pour les écrans plus larges */
     margin: 10px;
-    margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {
-    #gallery img {
-        width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
-        height: auto;
-        max-width: 480px; /* Taille maximale en largeur pour les écrans plus larges */
-        max-height: 360px; /* Taille maximale en hauteur pour les écrans plus larges */
-        margin: 10px;
-    }
-
     #gallery {
-        margin-left: -10px; /* Compensation pour la marge négative pour le premier élément de chaque ligne */
-        margin-right: -10px; /* Compensation pour la marge négative pour le dernier élément de chaque ligne */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        margin: 0; /* Supprimez les marges définies pour les smartphones */
     }
 }
 
