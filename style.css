@@ -31,9 +31,9 @@ p {
 
 #gallery img {
     max-width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
-    height: auto;
-    max-width: 480px; /* Taille maximale en largeur pour les écrans plus larges */
-    max-height: 360px; /* Taille maximale en hauteur pour les écrans plus larges */
+    max-height: 100%; /* Empêche l'étirement vertical */
+    width: auto; /* Ajuste automatiquement la largeur pour maintenir le rapport d'aspect */
+    height: auto; /* Ajuste automatiquement la hauteur pour maintenir le rapport d'aspect */
     margin: 10px;
 }
 
