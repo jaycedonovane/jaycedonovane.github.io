@@ -10,15 +10,13 @@ body {
     min-height: 100vh;
 }
 
-h1 {
-    font-size: 24px;
+h1, p {
     text-align: center;
 }
 
 p {
     font-size: 1rem;
-    margin: 10px;
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 #gallery {
@@ -26,60 +24,39 @@ p {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 15%; /* Ajout de marges de 15% de chaque côté */
+    margin: 0 15%;
 }
 
 #gallery img {
-    max-width: calc(33.33% - 20px); /* Utilisez la largeur de 33.33% moins la marge entre les images */
-    max-height: 100%; /* Empêche l'étirement vertical */
-    width: auto; /* Ajuste automatiquement la largeur pour maintenir le rapport d'aspect */
-    height: auto; /* Ajuste automatiquement la hauteur pour maintenir le rapport d'aspect */
+    max-width: calc(33.33% - 20px);
+    max-height: 100%;
+    width: auto;
+    height: auto;
     margin: 10px;
 }
 
 @media screen and (max-width: 767px) {
     #gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0; /* Aucune marge pour les smartphones */
+        margin: 0;
     }
 
     #gallery img {
-        max-width: 100%; /* Utilisez la largeur maximale de l'écran pour les smartphones */
-        max-height: 100%; /* Utilisez la hauteur maximale de l'écran pour les smartphones */
-        width: auto;
-        height: auto;
+        max-width: 100%;
+        max-height: 100%;
         margin: 10px;
     }
 
     .horizontal-bar {
-        margin-top: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
-        margin-bottom: 0; /* Aucune marge entre la barre et la photo pour les smartphones */
+        margin: 0;
     }
 }
 
-.horizontal-bar {
+.horizontal-bar, .horizontal-bar2 {
     height: 10px;
     width: 100%;
     background-color: #333;
     margin-top: 7px;
     margin-bottom: 5px;
-}
-
-.horizontal-bar2 {
-    height: 10px;
-    width: 100%;
-    background-color: #333;
-    margin-top: 7px;
-    margin-bottom: 5px;
-}
-
-@media screen and (min-width: 768px) {
-    #gallery {
-        margin: 0; /* Supprimez les marges définies pour les smartphones */
-    }
 }
 
 #menu {
@@ -125,19 +102,11 @@ p {
 }
 
 .horizontal-bar {
-    height: 10px;
-    width: 100%;
-    background-color: #333;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    margin: 70px 0 50px;
 }
 
 .horizontal-bar2 {
-    height: 10px;
-    width: 100%;
-    background-color: #333;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0;
 }
 
 #restaurant-button:hover, #ycs-button:hover, #decouverte-button:hover, #best-place-button:hover {
