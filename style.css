@@ -50,6 +50,7 @@ p {
     #gallery {
         margin: 0;
     }
+    
     .wallpaper {
         max-width: 100%;
     }
@@ -62,6 +63,12 @@ p {
 
     .horizontal-bar {
         margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #gallery img {
+        max-height: 450px;
     }
 }
 
