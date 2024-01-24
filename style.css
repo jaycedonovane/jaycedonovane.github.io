@@ -9,6 +9,15 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
+.full-width {
+    width: 100%;
+}
+
+.wallpaper {
+    object-fit: cover;
+    top: 0;
+    max-width: calc(70% - 10px);
+}
 
 h1, p {
     text-align: center;
