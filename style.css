@@ -61,8 +61,8 @@ p {
         top: 10px;
         left: 10px;
         background-color: brown;
-        color: white;
-        border: none;
+        color: tranparent;
+        border: 10px solid brown;
         padding: 10px;
         border-radius: 50%;
         cursor: pointer;
