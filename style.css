@@ -61,6 +61,7 @@ p {
         top: 10px;
         left: 10px;
         background-color: brown; 
+        border-color: bleue;
         color: white;
         border: none;
         padding: 10px;
