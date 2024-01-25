@@ -97,8 +97,8 @@ p {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 65px;
+    align-items: stretch;
+    height: auto;
     margin: 0;
 }
 
@@ -106,7 +106,7 @@ p {
     top: -50px;
 }
 
-#restaurant-button, #ycs-button, #decouverte-button, #best-place-button {
+#restaurant-button, #Richmond1-button, #decouverte-button, #best-place-button {
     background-color: #333;
     color: #fff;
     border: 2px solid transparent;
@@ -115,7 +115,7 @@ p {
     cursor: pointer;
     font-family: 'proxima-nova-extra-condensed', sans-serif;
     font-size: 1rem;
-    max-width: 100px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -130,7 +130,7 @@ p {
     margin: 50px 0;
 }
 
-#restaurant-button:hover, #ycs-button:hover, #decouverte-button:hover, #best-place-button:hover {
+#restaurant-button:hover, #Richmond1-button:hover, #decouverte-button:hover, #best-place-button:hover {
     background-color: #727272;
 }
 
