@@ -9,10 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.querySelector('.modal');
     const modalContent = document.querySelector('.modal-content');
 
-    // Variable pour suivre l'état du menu (actif ou inactif)
     let isMenuActive = false;
 
-    // Fonction pour ouvrir la modal avec une image spécifique
     function openModal(imageSrc) {
         modalContent.innerHTML = `<img src="${imageSrc}" alt="Modal Image">`;
         modal.style.display = 'block';
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         isMenuActive = !isMenuActive;
         menu.classList.toggle("hidden", !isMenuActive);
 
-        // Affiche les boutons au centre de l'écran avec fond transparent en mode téléphone
         if (isMenuActive) {
             menu.style.display = "flex";
             menu.style.flexDirection = "column";
@@ -47,14 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.style.left = "50%";
             menu.style.transform = "translate(-50%, -50%)";
 
-            // Ajout de la vérification pour la largeur de l'écran
             if (window.innerWidth <= 767) {
                 menu.style.backgroundColor = "transparent";
             } else {
                 menu.style.backgroundColor = "brown";
             }
         } else {
-            // Si le menu est inactif, masquer le menu
             menu.style.display = "none";
         }
     }
