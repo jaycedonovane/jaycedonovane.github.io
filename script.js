@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const ycsButton = document.getElementById("ycs-button");
+    const ycsButton = document.getElementById("Richmond1-button");
 
     ycsButton.addEventListener("click", function () {
-        const ycsImage = document.querySelector('img[src*="YCS.jpg"]');
+        const ycsImage = document.querySelector('img[src*="Richmond1.jpg"]');
 
         if (ycsImage) {
             ycsImage.scrollIntoView({ behavior: "smooth" });
