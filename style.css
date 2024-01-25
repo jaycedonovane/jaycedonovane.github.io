@@ -60,10 +60,9 @@ p {
         position: fixed;
         top: 10px;
         left: 10px;
-        background-color: brown; 
-        border-color: bleue;
+        background-color: brown;
         color: white;
-        border: 5px;
+        border: none;
         padding: 10px;
         border-radius: 50%;
         cursor: pointer;
