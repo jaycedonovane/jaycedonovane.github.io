@@ -1,182 +1,103 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById("menu");
+    const menuToggleBtn = document.getElementById("menu-toggle-btn");
+    const restaurantButton = document.getElementById("restaurant-button");
+    const Richmond1Button = document.getElementById("Richmond1-button");
+    const decouverteButton = document.getElementById("decouverte-button");
+    const bestPlaceButton = document.getElementById("best-place-button");
+    const galleryImages = document.querySelectorAll('#gallery img');
+    const modal = document.querySelector('.modal');
+    const modalContent = document.querySelector('.modal-content');
 
-.full-width {
-    width: 100%;
-}
+    // Variable pour suivre l'état du menu (actif ou inactif)
+    let isMenuActive = false;
 
-.wallpaper {
-    object-fit: cover;
-    top: 0;
-    max-width: calc(70% - 10px);
-}
+    // Fonction pour ouvrir la modal avec une image spécifique
+    function openModal(imageSrc) {
+        modalContent.innerHTML = `<img src="${imageSrc}" alt="Modal Image">`;
+        modal.style.display = 'block';
 
-h1, p {
-    text-align: center;
-}
+        const closeBtn = document.createElement('span');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.className = 'close';
+        closeBtn.addEventListener('click', closeModal);
 
-p {
-    font-size: 1rem;
-    margin: 10px 0 20px;
-}
-
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0 15%;
-}
-
-#gallery img {
-    max-width: calc(33.33% - 20px);
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    margin: 10px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 767px) {
-    #gallery {
-        margin: 0;
-    }
-    
-    .wallpaper {
-        max-width: 100%;
+        modalContent.appendChild(closeBtn);
     }
 
-    #gallery img {
-        max-width: 100%;
-        max-height: 100%;
-        margin: 10px;
+    // Fonction pour fermer la modal
+    function closeModal() {
+        modal.style.display = 'none';
+        modalContent.innerHTML = '';
     }
 
-    .horizontal-bar {
-        margin: 0;
+    // Fonction pour activer ou désactiver le menu
+    function toggleMenu() {
+        isMenuActive = !isMenuActive;
+        menu.classList.toggle("hidden", !isMenuActive);
+
+        // Affiche les boutons au centre de l'écran avec fond transparent en mode téléphone
+        if (isMenuActive) {
+            menu.style.display = "flex";
+            menu.style.flexDirection = "column";
+            menu.style.justifyContent = "center";
+            menu.style.alignItems = "center";
+            menu.style.position = "fixed";
+            menu.style.top = "50%";
+            menu.style.left = "50%";
+            menu.style.transform = "translate(-50%, -50%)";
+
+            // Ajout de la vérification pour la largeur de l'écran
+            if (window.innerWidth <= 767) {
+                menu.style.backgroundColor = "transparent";
+            } else {
+                menu.style.backgroundColor = "brown";
+            }
+        } else {
+            // Si le menu est inactif, masquer le menu
+            menu.style.display = "none";
+        }
     }
-}
 
-@media screen and (min-width: 768px) {
-    #gallery img {
-        max-height: 450px;
-    }
-}
+    // Ajout des écouteurs d'événements
+    window.addEventListener("scroll", function () {
+        if (window.scrollY === 0) {
+            document.body.classList.remove("scrolled");
+            menu.style.top = "-100px";
+        } else if (window.scrollY > window.innerHeight / 3) {
+            document.body.classList.add("scrolled");
+            menu.style.top = "0";
+        } else {
+            menu.style.top = "-50px";
+        }
+    });
 
-.horizontal-bar, .horizontal-bar2 {
-    height: 10px;
-    width: 100%;
-    background-color: #333;
-    margin-top: 7px;
-    margin-bottom: 5px;
-}
+    restaurantButton.addEventListener("click", function () {
+        const restaurantImage = document.querySelector('img[src*="restaurant"]');
+        if (restaurantImage) {
+            restaurantImage.scrollIntoView({ behavior: "smooth" });
+        }
+    });
 
-#menu {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    transition: top 0.5s;
-    text-align: center;
-    z-index: 1000;
-}
+    Richmond1Button.addEventListener("click", function () {
+        const Richmond1Image = document.querySelector('img[src*="Richmond1.jpg"]');
+        if (Richmond1Image) {
+            Richmond1Image.scrollIntoView({ behavior: "smooth" });
+        }
+    });
 
-#menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    height: auto;
-    margin: 0;
-}
+    decouverteButton.addEventListener("click", function () {
+        const welcomeSection = document.querySelector("h1");
+        welcomeSection.scrollIntoView({ behavior: "smooth" });
+    });
 
-.hidden {
-    top: -50px;
-}
+    bestPlaceButton.addEventListener("click", function () {
+        const bestPlaceImage = document.querySelector('img[src*="best1"]');
+        if (bestPlaceImage) {
+            bestPlaceImage.scrollIntoView({ behavior: "smooth" });
+        }
+    });
 
-#restaurant-button, #Richmond1-button, #decouverte-button, #best-place-button {
-    background-color: #333;
-    color: #fff;
-    border: 2px solid transparent;
-    padding: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'proxima-nova-extra-condensed', sans-serif;
-    font-size: 1rem;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 5px;
-}
-
-.horizontal-bar {
-    margin: 70px 0 50px;
-}
-
-.horizontal-bar2 {
-    margin: 50px 0;
-}
-
-#restaurant-button:hover, #Richmond1-button:hover, #decouverte-button:hover, #best-place-button:hover {
-    background-color: #727272;
-}
-
-.restaurant-text {
-    font-size: 1rem;
-    margin: 10px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal img {
-    max-width: 90vw;
-    max-height: 90vh;
-    border: 5px solid #fff;
-    border-radius: 10px;
-}
-
-.modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.close {
-    color: #fff;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #bbb;
-}
+    // Nouvelle partie pour le bouton de bascule du menu en mode téléphone
+    menuToggleBtn.addEventListener("click", toggleMenu);
+});
