@@ -23,13 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.appendChild(closeBtn);
     }
 
-    // Fonction pour fermer la modal
     function closeModal() {
         modal.style.display = 'none';
         modalContent.innerHTML = '';
     }
-
-    // Fonction pour activer ou désactiver le menu
     function toggleMenu() {
         isMenuActive = !isMenuActive;
         menu.classList.toggle("hidden", !isMenuActive);
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Ajout des écouteurs d'événements
     window.addEventListener("scroll", function () {
         if (window.scrollY === 0) {
             document.body.classList.remove("scrolled");
