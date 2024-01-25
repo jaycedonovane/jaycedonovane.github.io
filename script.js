@@ -89,6 +89,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Nouvelle partie pour le bouton de bascule du menu en mode téléphone
     menuToggleBtn.addEventListener("click", toggleMenu);
 });
