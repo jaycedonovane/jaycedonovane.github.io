@@ -63,7 +63,7 @@ p {
         background-color: brown; 
         border-color: bleue;
         color: white;
-        border: none;
+        border: 5px;
         padding: 10px;
         border-radius: 50%;
         cursor: pointer;
