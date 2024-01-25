@@ -56,17 +56,17 @@ p {
     }
 
     #menu-toggle-btn {
-        display: block; 
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        background-color: brown;
-        color: tranparent;
-        border: 10px solid brown;
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 20px;
+    display: block; 
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    color: brown;
+    border: 10px solid brown;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
     }
     
     .wallpaper {
