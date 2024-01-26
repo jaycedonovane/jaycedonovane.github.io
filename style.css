@@ -56,17 +56,20 @@ p {
     }
 
     #menu-toggle-btn {
-    display: block; 
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background-color: transparent;
-    color: brown;
-    border: 10px solid brown;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
+        display: block; 
+        position: fixed;
+        top: 3%;
+        left: 6%;
+        width: 20px; 
+        height: 20px; 
+        background-color: transparent;
+        color: transparent;
+        border: none;
+        padding: 5%;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0.616);
     }
     
     .wallpaper {
