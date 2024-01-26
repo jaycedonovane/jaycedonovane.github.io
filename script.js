@@ -5,23 +5,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const Richmond1Button = document.getElementById("Richmond1-button");
     const decouverteButton = document.getElementById("decouverte-button");
     const bestPlaceButton = document.getElementById("best-place-button");
+    const galleryImages = document.querySelectorAll('#gallery img');
     const modal = document.querySelector('.modal');
     const modalContent = document.querySelector('.modal-content');
+
     let isMenuActive = false;
 
     function openModal(imageSrc) {
         modalContent.innerHTML = `<img src="${imageSrc}" alt="Modal Image">`;
         modal.style.display = 'block';
+
         const closeBtn = document.createElement('span');
         closeBtn.innerHTML = '&times;';
         closeBtn.className = 'close';
-        closeBtn.addEventListener('click', closeModal);
-        modalContent.appendChild(closeBtn);
-    }
+        closeBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            modalContent.innerHTML = '';
+        });
 
-    function closeModal() {
-        modal.style.display = 'none';
-        modalContent.innerHTML = '';
+        modalContent.appendChild(closeBtn);
     }
 
     function toggleMenu() {
@@ -57,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             menu.style.top = "-50px";
         }
+    });
+
+    galleryImages.forEach(function (image) {
+        image.addEventListener("click", function () {
+            openModal(image.src);
+        });
     });
 
     restaurantButton.addEventListener("click", function () {
